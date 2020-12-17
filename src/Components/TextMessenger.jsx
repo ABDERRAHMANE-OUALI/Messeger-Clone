@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Input, IconButton } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
+import jump from "jump.js";
+
 
 function TextMessenger({ handleMessages }) {
   const [input, setInput] = useState("");
@@ -14,12 +16,14 @@ function TextMessenger({ handleMessages }) {
       />
       <IconButton
         onClick={() => {
+          jump(".target");;
           handleMessages(input);
           setInput("");
         }}
         disabled={!input}
-        color="primary" 
+        color="primary"
         className="btn-primary"
+        type="submit"
       >
         <SendIcon />
       </IconButton>

@@ -4,7 +4,7 @@ import Messages from "./Components/Messages";
 import Logo from "./Components/Logo";
 import db from "./firebase";
 import firebase from "firebase";
-import "./App.css";
+
 
 function App() {
   const [username, setUsername] = useState("");
@@ -25,9 +25,14 @@ function App() {
   };
   return (
     <div className="App">
-      <Logo />
-      <Messages message={message} usermsg={username} />
-      <TextMessenger handleMessages={handleMessages} />
+      <div className="message_field">
+          <Logo />
+          <Messages message={message} usermsg={username} />
+      </div>
+      <div className="typing_field">
+        <TextMessenger handleMessages={handleMessages} />
+      </div>
+      <div className="target"></div>
     </div>
   );
 }
